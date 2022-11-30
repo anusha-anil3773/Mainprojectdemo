@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AddnewComponent implements OnInit {
 
-  books:any=[]
+ officers:any=[]
  
   constructor(
     private apiService: ApiService,
@@ -32,7 +32,7 @@ export class AddnewComponent implements OnInit {
 
   onSubmit(){
     this.apiService.addofficer(this.data).subscribe(res=>{
-      this.books=res
+      this.officers=res
       alert('successfully added');
       this.router.navigate(['/home'])
     })

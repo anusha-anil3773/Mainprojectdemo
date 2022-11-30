@@ -9,8 +9,8 @@ import { AddnewComponent } from './page/addnew/addnew.component';
 import { EditdataComponent } from './page/editdata/editdata.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './page/home/home.component';
-
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -26,7 +26,9 @@ import { HomeComponent } from './page/home/home.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule
     
   ],
   providers: [ApiService],

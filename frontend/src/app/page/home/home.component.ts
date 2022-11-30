@@ -9,11 +9,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  
-  constructor(private apiService: ApiService,private router:Router) { }
-
   officers: any = []
   id:any
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 6;
+  filterTerm!: string;
+
+  constructor(private apiService: ApiService,private router:Router) { }
+
+ 
   ngOnInit() {
     this.getData();
   }
@@ -39,5 +44,13 @@ export class HomeComponent implements OnInit {
       this.getData()
     })
   }
-
+  onTableDataChange(event: any) {
+    this.page = event;
+    this.getData();
+  } 
+  onTableSizeChange(event: any): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
+    this.getData();
+  }
 }
