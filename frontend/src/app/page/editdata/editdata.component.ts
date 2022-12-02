@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EditdataComponent implements OnInit {
 
   id:any
- books:any=[]
+ officers:any=[]
   constructor(
     private apiService: ApiService,
     private router:Router,
